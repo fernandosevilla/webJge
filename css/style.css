@@ -61,17 +61,24 @@
     margin-right: 10px; /* Espacio entre la imagen y el texto */
 }
 
-.logo .titulo span {
+.logo span {
     font-size: 20px;
+}
+
+.logo .titulo span {
     margin-right: 60vh; /* separacion entre el titulo de la pagina y los elementos de la derecha del menu */
 }
 
-.logo .dinamicas {
+.dinamicas {
     color: var(--colorPalabrasDinamicas);
+    display: inline-block;
+    margin-left: 6px;
     min-width: 100px;
-    margin-left: 5px;
+    text-align: left;
+    opacity: 1;
     transition: opacity 1s ease-in-out;
 }
+
 
 .fotoEncabezado {
     width: 100%;
