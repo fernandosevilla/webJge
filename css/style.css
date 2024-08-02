@@ -11,6 +11,7 @@
     --hoverEnlaces: #00ff66;
     --activeEnlaces: #00762f;
     --colorIconos: #00ff66;
+    --colorPalabrasDinamicas: #00ff66;
     /* Fin Colores */
 }
 
@@ -60,9 +61,16 @@
     margin-right: 10px; /* Espacio entre la imagen y el texto */
 }
 
-.logo span {
+.logo .titulo span {
     font-size: 20px;
     margin-right: 60vh; /* separacion entre el titulo de la pagina y los elementos de la derecha del menu */
+}
+
+.logo .dinamicas {
+    color: var(--colorPalabrasDinamicas);
+    min-width: 100px;
+    margin-left: 5px;
+    transition: opacity 1s ease-in-out;
 }
 
 .fotoEncabezado {
@@ -87,13 +95,19 @@ footer .iconos {
 
 footer .iconos svg {
     margin: 0 10rem;
-    height: 8vh;
+    height: 4.375rem;
     fill: var(--colorIconos); /* Color de los íconos */
 }
 
 footer span {
     display: flex;
     color: white;
+    font-style: italic;
     margin-top: 20px;
     justify-content: center;
+}
+
+@keyframes fade {
+    0%, 20%, 100% { opacity: 0; }
+    30%, 90% { opacity: 1; }
 }
