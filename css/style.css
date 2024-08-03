@@ -79,17 +79,40 @@
     transition: opacity 1s ease-in-out;
 }
 
-
 .fotoEncabezado {
     width: 100%;
     height: 66.5vh;
-    background-image: url(../img/banner.webp);
+    background-image: url(../img/pc/banner.webp);
     background-size: cover;
     background-repeat: no-repeat;
     mask-image: linear-gradient(
         black 80%,
         transparent
     );
+}
+
+.menuMovil {
+    display: none;
+    /* position: relative; */
+}
+
+/* 
+.menuMovilContenido {
+    display: none;
+    position: absolute;
+}
+
+.menuMovil input[type="checkbox"]:checked ~ .menuMovilContenido {
+    display: block;
+}
+*/
+
+footer {
+    background: #000;
+}
+
+footer a {
+    background: transparent;
 }
 
 footer .iconos {
@@ -104,6 +127,7 @@ footer .iconos svg {
     margin: 0 10rem;
     height: 4.375rem;
     fill: var(--colorIconos); /* Color de los íconos */
+    background: transparent;
 }
 
 footer span {
@@ -112,9 +136,95 @@ footer span {
     font-style: italic;
     margin-top: 20px;
     justify-content: center;
+    background-color: #000;
 }
 
 @keyframes fade {
     0%, 20%, 100% { opacity: 0; }
     30%, 90% { opacity: 1; }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+/* Movil */
+@media (max-width: 767px) {
+    .menuPrincipal ul {
+        display: none;
+    }
+
+    .menuMovil {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        margin-bottom: 50px;
+        padding: 10px 30px;
+    }
+
+    .menuMovil .logoMovil {
+        margin-bottom: 10px;
+    }
+
+    .menuMovil img {
+        width: 40px;
+        height: auto;
+    }
+
+    .menuMovil .titulo {
+        margin-bottom: 10px;
+        color: white;
+        font-family: var(--fuenteLetraMenu);
+        font-size: 24px;
+    }
+
+    .menuMovil input[type="checkbox"] {
+        display: none;
+    }
+
+    .menuMovil label {
+        cursor: pointer;
+        color: white;
+        font-family: var(--fuenteLetraMenu);
+        font-size: 18px;
+        padding: 10px;
+        border: 2px solid var(--hoverEnlaces);
+        border-radius: 5px;
+        display: inline-block;
+        text-align: right;
+        margin-top: 10px;
+    }
+
+    .menuMovilContenido {
+        display: none;
+        position: absolute;
+        background: var(--fondoPagina);
+        width: 250px;
+        top: 100%;
+        z-index: 1000;
+        padding: 10px 0;
+        box-shadow: 0 4px 8px #0003;
+        text-align: center;
+    }
+
+    .menuMovil input[type="checkbox"]:checked ~ .menuMovilContenido {
+        display: block; /* muestra cuando el check esta marcado */
+    }
+
+    .menuMovilContenido a {
+        display: flex;
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
+        font-family: var(--fuenteLetraMenu);
+        border-bottom: 1px solid #444;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .menuMovilContenido a:hover {
+        background: #333;
+    }
 }
